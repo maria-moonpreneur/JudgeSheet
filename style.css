@@ -1,71 +1,123 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
+  margin: 20px;
   align-items: center;
-  height: 100vh;
+  background-color: #f8f9fa;
+  justify-content: center;
 }
 
 .container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
   max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
-.header {
+.header h1, .title h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+.info {
   display: flex;
   justify-content: space-between;
+  margin: 10px 0;
+}
+
+.info div {
+  display: flex;
   align-items: center;
 }
 
-.title {
-  text-align: center;
-  margin: 20px 0;
+.info input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.info, .instructions {
-  margin: 10px 0;
+.instructions {
+  font-size: 14px;
+  text-align: center;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.warning {
+  font-size: 14px;
+  text-align: center;
+  background-color: #f9dcdc;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
-thead th {
-  background-color: #0096FF;
-  color: white;
+th, td {
   padding: 10px;
   text-align: center;
-}
-
-tbody td {
-  text-align: center;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-input[type="text"] {
   border: 1px solid #ccc;
-  padding: 5px;
-  border-radius: 4px;
 }
 
-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #0096FF;
-  color: white;
-  border: none;
-  border-radius: 4px;
+th {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+td {
+  background-color: #f2f2f2;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #007acc;
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group input[type="radio"] + span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.radio-group input[type="radio"]:checked + span {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.button1 {
+  display: block;
+  width: 50%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 25%;
+}
+
+.button1:hover {
+  background-color: #0056b3;
 }
