@@ -1,68 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scoring Slide for Judges</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container" id="scoring-sheet">
-        <div class="header">
-            <h1>Design Skills</h1>
-            <div class="date">Date: <input type="text" id="date" placeholder="XX-XX-XXXX"></div>
-        </div>
-        <div class="title">
-            <h2>Scoring Slide for Judges</h2>
-        </div>
-        <div class="info">
-            <div>Judge's Name: <input type="text" id="judge-name" value="Christopher M. Watson"></div>
-            <div>Student's Name: <input type="text" id="student-name" value="Andrea Johnson"></div>
-        </div>
-        <div class="instructions">
-            Instructions: Please provide a score for each student based on the following criteria. Use the scale provided to indicate your assessment.
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Criteria</th>
-                    <th>Low</th>
-                    <th>Fair</th>
-                    <th>Good</th>
-                    <th>High</th>
-                    <th>Exceptional</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Presentation Skills</td>
-                    <td><input type="radio" name="presentation" value="Low"></td>
-                    <td><input type="radio" name="presentation" value="Fair"></td>
-                    <td><input type="radio" name="presentation" value="Good"></td>
-                    <td><input type="radio" name="presentation" value="High"></td>
-                    <td><input type="radio" name="presentation" value="Exceptional"></td>
-                </tr>
-                <tr>
-                    <td>Communication Skills</td>
-                    <td><input type="radio" name="communication" value="Low"></td>
-                    <td><input type="radio" name="communication" value="Fair"></td>
-                    <td><input type="radio" name="communication" value="Good"></td>
-                    <td><input type="radio" name="communication" value="High"></td>
-                    <td><input type="radio" name="communication" value="Exceptional"></td>
-                </tr>
-                <tr>
-                    <td>Technical Skills</td>
-                    <td><input type="radio" name="technical" value="Low"></td>
-                    <td><input type="radio" name="technical" value="Fair"></td>
-                    <td><input type="radio" name="technical" value="Good"></td>
-                    <td><input type="radio" name="technical" value="High"></td>
-                    <td><input type="radio" name="technical" value="Exceptional"></td>
-                </tr>
-            </tbody>
-        </table>
-        <button onclick="downloadPDF()">Submit</button>
-    </div>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Scoring Sheet for Judges</title>
+     <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+     <div class="container" id="scoring-sheet">
+         <div class="header">
+             <h1>IoT Show and Tell</h1>
+         </div>
+         <div class="title">
+             <h2>Scoring Sheet for Judges</h2>
+         </div>
+         <div class="info">
+             <div>Judge's Name:&nbsp;&nbsp;<input type="text" id="judge-name" required></div>
+             <div>Student's Name:&nbsp;&nbsp;<input type="text" id="student-name" required></div>
+         </div>
+         <br>
+         <div class="instructions">
+             <b>Instructions:</b> Please provide a score for each student based on the following criteria. Use the scale provided to indicate your assessment.
+         </div>
+         <br>
+         <div class="warning">
+             <b>Warning:</b> If you reload the page all the contents of the form will be reset.
+         </div>
+         <table>
+             <thead>
+                 <tr>
+                     <th></th>
+                     <th>Criteria</th>
+                     <th>Low</th>
+                     <th>Fair</th>
+                     <th>Good</th>
+                     <th>High</th>
+                     <th>Exceptional</th>
+                     <th>Points</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <td rowspan="2">Presentation Skills</td>
+                     <td>Visual Appeal</td>
+                     <td><input type="radio" name="Visual Appeal" value="1" required></td>
+                     <td><input type="radio" name="Visual Appeal" value="2"></td>
+                     <td><input type="radio" name="Visual Appeal" value="3"></td>
+                     <td><input type="radio" name="Visual Appeal" value="4"></td>
+                     <td><input type="radio" name="Visual Appeal" value="5"></td>
+                     <td></td>
+                 </tr>
+                 <tr>
+                     <td>Organization of Slides</td>
+                     <td><input type="radio" name="Organization of Slides" value="1" required></td>
+                     <td><input type="radio" name="Organization of Slides" value="2"></td>
+                     <td><input type="radio" name="Organization of Slides" value="3"></td>
+                     <td><input type="radio" name="Organization of Slides" value="4"></td>
+                     <td><input type="radio" name="Organization of Slides" value="5"></td>
+                     <td></td>
+                 </tr>
+                 <tr>
+                     <td rowspan="2">Communication Skills</td>
+                     <td>Engagement with Audience</td>
+                     <td><input type="radio" name="Engagement with Audience" value="1" required></td>
+                     <td><input type="radio" name="Engagement with Audience" value="2"></td>
+                     <td><input type="radio" name="Engagement with Audience" value="3"></td>
+                     <td><input type="radio" name="Engagement with Audience" value="4"></td>
+                     <td><input type="radio" name="Engagement with Audience" value="5"></td>
+                     <td></td>
+                 </tr>
+                 <tr>
+                     <td>Confidence</td>
+                     <td><input type="radio" name="Confidence" value="1" required></td>
+                     <td><input type="radio" name="Confidence" value="2"></td>
+                     <td><input type="radio" name="Confidence" value="3"></td>
+                     <td><input type="radio" name="Confidence" value="4"></td>
+                     <td><input type="radio" name="Confidence" value="5"></td>
+                     <td></td>
+                 </tr>
+                 <tr>
+                     <td rowspan="2">Technical Skills</td>
+                     <td>Content Accuracy</td>
+                     <td><input type="radio" name="Content Accuracy" value="1" required></td>
+                     <td><input type="radio" name="Content Accuracy" value="2"></td>
+                     <td><input type="radio" name="Content Accuracy" value="3"></td>
+                     <td><input type="radio" name="Content Accuracy" value="4"></td>
+                     <td><input type="radio" name="Content Accuracy" value="5"></td>
+                     <td></td>
+                 </tr>
+                 <tr>
+                     <td>Depth of Knowledge</td>
+                     <td><input type="radio" name="Depth of Knowledge" value="1" required></td>
+                     <td><input type="radio" name="Depth of Knowledge" value="2"></td>
+                     <td><input type="radio" name="Depth of Knowledge" value="3"></td>
+                     <td><input type="radio" name="Depth of Knowledge" value="4"></td>
+                     <td><input type="radio" name="Depth of Knowledge" value="5"></td>
+                     <td></td>
+                 </tr>
+                 <tr>
+                     <td>Overall Impression</td>
+                     <td>Impact</td>
+                     <td><input type="radio" name="Impact" value="1" required></td>
+                     <td><input type="radio" name="Impact" value="2"></td>
+                     <td><input type="radio" name="Impact" value="3"></td>
+                     <td><input type="radio" name="Impact" value="4"></td>
+                     <td><input type="radio" name="Impact" value="5"></td>
+                     <td></td>
+                 </tr>
+             </tbody>
+         </table>
+         <br>
+         <input type="submit" class="button1" value="Submit" onclick="submitForm()">
+     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+     <script>
+         function updatePoints() {
+             let rows = document.querySelectorAll("tbody tr");
+             rows.forEach(row => {
+                 let inputs = row.querySelectorAll("input[type='radio']");
+                 inputs.forEach(input => {
+                     input.addEventListener('change', () => {
+                         let pointsCell = row.querySelector("td:last-child");
+                         pointsCell.innerText = input.value;
+                     });
+                 });
+             });
+         }
+
+         document.addEventListener('DOMContentLoaded', updatePoints);
+
+         function getFormData() {
+             const formData = {
+                 judgeName: document.getElementById('judge-name').value,
+                 studentName: document.getElementById('student-name').value,
+                 visualAppeal: document.querySelector('input[name="Visual Appeal"]:checked') ? document.querySelector('input[name="Visual Appeal"]:checked').value : '',
+                 organizationOfSlides: document.querySelector('input[name="Organization of Slides"]:checked') ? document.querySelector('input[name="Organization of Slides"]:checked').value : '',
+                 engagementWithAudience: document.querySelector('input[name="Engagement with Audience"]:checked') ? document.querySelector('input[name="Engagement with Audience"]:checked').value : '',
+                 confidence: document.querySelector('input[name="Confidence"]:checked') ? document.querySelector('input[name="Confidence"]:checked').value : '',
+                 contentAccuracy: document.querySelector('input[name="Content Accuracy"]:checked') ? document.querySelector('input[name="Content Accuracy"]:checked').value : '',
+                 depthOfKnowledge: document.querySelector('input[name="Depth of Knowledge"]:checked') ? document.querySelector('input[name="Depth of Knowledge"]:checked').value : '',
+                 impact: document.querySelector('input[name="Impact"]:checked') ? document.querySelector('input[name="Impact"]:checked').value : ''
+             };
+             return formData;
+         }
+
+         function submitForm() {
+             const formData = getFormData();
+             fetch('https://script.google.com/macros/s/AKfycbyTTJTR8hDL7LdpuiPxNg2sMtJbnnu1Xg6AjyIRsGvbMCVsQVQFFhaHp6q2eXdafiHhBw/exec', {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(formData)
+             })
+             .then(response => response.json())
+             .then(data => {
+                 if (data.status === 'success') {
+                     downloadPDF();
+                 } else {
+                     alert('Failed to submit the form.');
+                 }
+             })
+             .catch(error => {
+                 alert('Error: ' + error.message);
+                 console.error(error);
+             });
+         }
+
+         function downloadPDF() {
+             const element = document.getElementById('scoring-sheet');
+             setTimeout(() => {
+                 html2pdf(element, {
+                     margin: 0.5,
+                     filename: 'scoring_sheet.pdf',
+                     image: { type: 'jpeg', quality: 0.98 },
+                     html2canvas: { scale: 2 },
+                     jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                 });
+             }, 500); // Adjust timeout if necessary
+         }
+     </script>
+ </body>
+ </html>
