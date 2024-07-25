@@ -1,33 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <base target="_top">
-    <style>
-        .slider-container {
-            text-align: center;
-            padding: 20px;
-        }
-        .slider {
-            width: 100%;
-        }
-        .value {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoring Slide for Judges</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="slider-container">
-        <h2>Grading Slider</h2>
-        <input type="range" min="1" max="5" value="3" class="slider" id="gradeSlider">
-        <div class="value">Value: <span id="sliderValue">3</span></div>
+    <div class="container" id="scoring-sheet">
+        <div class="header">
+            <h1>Design Skills</h1>
+            <div class="date">Date: <input type="text" id="date" placeholder="XX-XX-XXXX"></div>
+        </div>
+        <div class="title">
+            <h2>Scoring Slide for Judges</h2>
+        </div>
+        <div class="info">
+            <div>Judge's Name: <input type="text" id="judge-name" value="Christopher M. Watson"></div>
+            <div>Student's Name: <input type="text" id="student-name" value="Andrea Johnson"></div>
+        </div>
+        <div class="instructions">
+            Instructions: Please provide a score for each student based on the following criteria. Use the scale provided to indicate your assessment.
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Low</th>
+                    <th>Fair</th>
+                    <th>Good</th>
+                    <th>High</th>
+                    <th>Exceptional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Presentation Skills</td>
+                    <td><input type="radio" name="presentation" value="Low"></td>
+                    <td><input type="radio" name="presentation" value="Fair"></td>
+                    <td><input type="radio" name="presentation" value="Good"></td>
+                    <td><input type="radio" name="presentation" value="High"></td>
+                    <td><input type="radio" name="presentation" value="Exceptional"></td>
+                </tr>
+                <tr>
+                    <td>Communication Skills</td>
+                    <td><input type="radio" name="communication" value="Low"></td>
+                    <td><input type="radio" name="communication" value="Fair"></td>
+                    <td><input type="radio" name="communication" value="Good"></td>
+                    <td><input type="radio" name="communication" value="High"></td>
+                    <td><input type="radio" name="communication" value="Exceptional"></td>
+                </tr>
+                <tr>
+                    <td>Technical Skills</td>
+                    <td><input type="radio" name="technical" value="Low"></td>
+                    <td><input type="radio" name="technical" value="Fair"></td>
+                    <td><input type="radio" name="technical" value="Good"></td>
+                    <td><input type="radio" name="technical" value="High"></td>
+                    <td><input type="radio" name="technical" value="Exceptional"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="downloadPDF()">Submit</button>
     </div>
-    <script>
-        var slider = document.getElementById("gradeSlider");
-        var output = document.getElementById("sliderValue");
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
